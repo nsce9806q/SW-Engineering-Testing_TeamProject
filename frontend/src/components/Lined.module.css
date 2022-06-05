@@ -4,3 +4,10 @@
   /* thick underline */
   box-shadow: inset 0 -14px #a8d5ff;
 }
+
+.lined2 {
+  padding-bottom: 4px;
+
+  /* thick underline */
+  box-shadow: inset 0 -14px #dcedfb;
+}

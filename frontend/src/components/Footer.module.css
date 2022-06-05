@@ -1,6 +1,6 @@
 .footer {
-  padding: 20px 20px 53px;
-  color: #878787;
+  padding: 20px 30px 20px 30px;
+  color: #9b9a9a;
   background-color: #494949;
 }
 
@@ -41,4 +41,13 @@
 
 .sns :not(:last-child) {
   margin-right: 13px;
+}
+
+.links > li > a[target="_blank"]{
+  color : rgb(215, 215, 215);
+}
+
+.links a[target="_blank"]:hover {
+  color: #aacefa;
+  cursor: pointer;
 }

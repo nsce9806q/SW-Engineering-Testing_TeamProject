@@ -17,7 +17,7 @@
 
 .container {
   display: flex;
-  margin: 120px auto 226px;
+  margin: 50px auto 20px;
 }
 
 .texts {
@@ -40,7 +40,7 @@
   font-size: 18px;
   line-height: 1.61;
   color: #878787;
-  text-align: left;
+  text-align: center;
   letter-spacing: normal;
 }
 
@@ -59,7 +59,7 @@
 @media (max-width: 840px) {
   .container {
     flex-direction: column-reverse;
-    margin: 60px auto 226px;
+    margin: 50px auto 20px;
   }
 
   .text {

@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto 20px;
+}
+
+.text{
+  display: flex;
+  flex-direction: column;
+  margin: 30px 50px 50px;
+  color: black;
+}
+
+.figure{
+  width: 100%;
+  max-width: 418px;
+  margin: 20px auto 30px;
+}
+
+@media (max-width: 840px) {
+  .container {
+    flex-direction: column;
+    margin: 50px auto 20px;
+  }
+
+  .text{
+    flex: 1 1;
+    flex-direction: column;
+    margin: 30px 40px 50px;
+  }
+}

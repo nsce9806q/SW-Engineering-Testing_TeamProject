@@ -5,9 +5,8 @@ function Footer() {
     <div className={styles.footer}>
       <div>
         <ul className={styles.links}>
-          <li>개인정보 취급방침</li>
-          <li>사용자 이용약관</li>
-          <li>자주 묻는 질문</li>
+          <li><a target="_blank" rel="noopener noreferrer" href="https://finance.yahoo.com">Yahoo Finance</a></li>
+          <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/nsce9806q/SW-Engineering-Testing_TeamProject">Our Github</a></li>
         </ul>
         <ul className={styles.info}>
           <li>SW 공학 및 테스팅 Team project</li>
