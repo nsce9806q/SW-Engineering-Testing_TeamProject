@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useCallback, useEffect, useState } from 'react';
 import personIcon from '../assets/person.png';
 import styles from './UserMenu.module.css';
@@ -28,9 +29,8 @@ function UserMenu() {
       </button>
       {isOpen && (
         <ul className={styles.popup}>
-          <li>내 댓글</li>
-          <li>관심종목</li>
-          <li>로그아웃</li>
+          <li><Link to='/MyPage'>마이페이지</Link></li>
+          <li><Link to='/'>로그아웃</Link></li>
         </ul>
       )}
     </div>
