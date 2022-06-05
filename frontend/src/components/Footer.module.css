@@ -1,0 +1,53 @@
+.footer {
+  padding: 20px 30px 20px 30px;
+  color: #9b9a9a;
+  background-color: #494949;
+}
+
+.links {
+  padding: 0;
+  color: #c4c4c4;
+  list-style: none;
+}
+
+.links > * {
+  display: inline-block;
+  line-height: 1.64;
+}
+
+.links > :not(:last-child) {
+  margin-right: 30px;
+}
+
+.info {
+  padding: 0;
+  margin-bottom: 36px;
+  list-style: none;
+}
+
+.info > * {
+  display: inline-block;
+  line-height: 1.64;
+}
+
+.info > :not(:last-child) {
+  margin-right: 30px;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sns :not(:last-child) {
+  margin-right: 13px;
+}
+
+.links > li > a[target="_blank"]{
+  color : rgb(215, 215, 215);
+}
+
+.links a[target="_blank"]:hover {
+  color: #aacefa;
+  cursor: pointer;
+}
