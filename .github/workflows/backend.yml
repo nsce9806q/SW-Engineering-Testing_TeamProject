@@ -24,9 +24,7 @@ jobs:
           node-version: "16.15.1"
         
       - name: Install Dependencies
-        run: |
-          cd backend
-          npm install
+        run: cd backend; npm install
         
       - name: Shutdown Server
         uses: appleboy/ssh-action@master
