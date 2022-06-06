@@ -24,7 +24,7 @@ jobs:
           node-version: "16.15.1"
         
       - name: Install Dependencies
-        run: cd backend; npm install
+        run: cd backend; npm install; tar -cvf deploy.tar ../backend
         
       - name: Shutdown Server
         uses: appleboy/ssh-action@master
@@ -44,8 +44,9 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          source: "/backend"
+          source: "backend/deploy.tar"
           target: "/home/ubuntu"
+          strip_components: 1
           
       - name: Run Server
         if: always()
@@ -55,6 +56,8 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
+            tar -xvf deploy.tar
+            sudo rm deploy.tar
             cd backend
             nohup node src/app.js &
             exit
