@@ -56,8 +56,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
-            tar -xvf deploy.tar;
-            sudo rm deploy.tar;
+            ./unzip.sh
             cd backend;
             nohup node src/app.js &;
             exit
