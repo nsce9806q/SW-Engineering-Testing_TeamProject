@@ -65,7 +65,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           script: |
             pwd
-            nohup /home/ubuntu/.nvm/versions/node/v16.15.1/bin/node backend/src/app.js &
+            nohup /home/ubuntu/.nvm/versions/node/v16.15.1/bin/node backend/src/app.js > nohup.out 2>&1 &
             exit
           
           
