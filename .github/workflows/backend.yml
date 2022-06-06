@@ -64,6 +64,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
+            pwd
             nohup node backend/src/app.js &
             exit
           
