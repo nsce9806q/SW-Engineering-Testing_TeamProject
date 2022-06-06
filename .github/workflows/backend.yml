@@ -57,8 +57,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           script: |
             ./unzip.sh
-            cd backend;
-            nohup node src/app.js &;
+            nohup node backend/src/app.js &
             exit
           
           
