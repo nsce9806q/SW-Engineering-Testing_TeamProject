@@ -7,4 +7,4 @@ const startServer = () => {
     initLoaders(app);
 }
 
-startServer(); 
+startServer();
