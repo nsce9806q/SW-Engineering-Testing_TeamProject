@@ -1,3 +1,4 @@
+<!-- 게시판 페이지 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +15,7 @@
 
     <!-- Main Content -->
     <div>
-        <% for (var i = 0; i < blogposts.length; i++){ %>
+        <% for (var i = blogposts.length - 1; i > -1; i--){ %>
         <div>
             <a href="/post/<%= blogposts[i]._id %>">
                 <h2>
@@ -26,7 +27,18 @@
                 <p>
                     Posted by
                     <a href ="#"><%= blogposts[i].username %></a>
-                    on <%= blogposts[i].datePosted.toDateString() %>
+                    
+                    <!-- update time이나 create time을 보여주는 코드 -->
+                    <% var create = blogposts[i].createdAt * 1000 %>
+                    <% var update = blogposts[i].updatedAt * 1000 %>
+
+                    <% if (create == update) { %>
+                        on <%= blogposts[i].createdAt %>    
+                    <% } %>
+
+                    <% if (create < update) { %>
+                        <%= blogposts[i].updatedAt %>    
+                    <% } %>
                 </p>
                 <hr>
             </a>
