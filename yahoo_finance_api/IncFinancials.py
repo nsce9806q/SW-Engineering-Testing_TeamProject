@@ -15,8 +15,8 @@ kor_name = ['연구개발비' ,'회계변경효과', '법인세 차감전 당기
  
 yearly_fin = ticker.financials
 yearly_fin.columns = yearly_fin.columns.astype(str)
-yearly_fin['한글명'] = kor_name
-yearly_fin.set_index('한글명', inplace=True)
+yearly_fin['항목'] = kor_name
+yearly_fin.set_index('항목', inplace=True)
 print(yearly_fin)
 
 
