@@ -1,3 +1,4 @@
+<!-- 게시판 글쓰기 페이지 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +12,7 @@
     <form action="posts/store" method="POST">
         <div>
             <label>제목</label>
-        <input type="text" placeholder="제목을 입력하세요" id="title" name="title">
+            <input type="text" placeholder="제목을 입력하세요" id="title" name="title">
         </div>
         
         <div>
@@ -20,7 +21,7 @@
         </div>
 
         <div>
-            <button type="summit" id="sendMessageButton">Post</button>
+            <button onclick="alert('제목과 내용을 작성하지 않으면 댓글이 등록되지 않습니다.')" type="summit" id="sendMessageButton">Post</button>
         </div>
         
     </form>
