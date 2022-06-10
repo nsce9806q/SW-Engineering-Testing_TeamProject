@@ -1,0 +1,21 @@
+<!-- 해당 댓글을 수정, 삭제할 수 있는 페이지 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><%= blogpost.title %></h1>
+    <h2><%= blogpost.body %></h2>
+    <p>
+        Posted by
+        <a href ="#"><%= blogpost.username %></a>
+    </p>
+    <br><br>
+    <a href="/post/edit/<%= blogpost._id %>">수정</a>
+    <a href="/post/delete/<%= blogpost._id %>" onclick="return confirm('게시물을 삭제합니다');">삭제</a>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!-- 게시판 글쓰기 페이지 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>게시글 쓰기</h1>
+    <form action="posts/store" method="POST">
+        <div>
+            <label>제목</label>
+            <input type="text" placeholder="제목을 입력하세요" id="title" name="title">
+        </div>
+        
+        <div>
+            <label>내용</label>
+            <textarea rows="10" id="body" name="body"></textarea>
+        </div>
+
+        <div>
+            <button onclick="alert('제목과 내용을 작성하지 않으면 댓글이 등록되지 않습니다.')" type="summit" id="sendMessageButton">Post</button>
+        </div>
+        
+    </form>
+</body>
+</html>
