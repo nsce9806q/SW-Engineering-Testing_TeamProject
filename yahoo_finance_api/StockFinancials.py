@@ -1,12 +1,8 @@
 #종목 재무 정보
 
 import yahoo_fin.stock_info as si
-from datetime import datetime
-from dateutil.relativedelta import relativedelta
 
 code = input() #ex) '005930.KS' - Samsung / 'AMZN' - Amazon
-now = datetime.now()
-monthago = now - relativedelta(months=1)
 
 #부채, 자기 자본, 자산
 balance = si.get_balance_sheet(code)
