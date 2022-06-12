@@ -1,5 +1,7 @@
 import styles from './SignIn.module.css';
 import { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function SignIn(){
     const [inputs, setInputs] = useState({
@@ -14,6 +16,26 @@ function SignIn(){
             [name]: value
         });
     };
+
+    const navigate = useNavigate()
+
+    const url = "http://ec2-13-209-75-85.ap-northeast-2.compute.amazonaws.com:3000"
+    const doSignIn = () => {
+        axios.post(url+'/auth/login', {
+            email: inputs.email,
+            password: inputs.password,
+        })
+        .then(function (response) {
+            console.log(response);
+            alert("로그인 성공!");
+            sessionStorage.setItem("accessToken", response.data.accessToken);
+            sessionStorage.setItem("refreshToken", response.data.refreshToken);
+            navigate('/');
+        })
+        .catch(function (error) {
+            console.log(error)
+        })
+    }
 
     return(
         <>
@@ -33,6 +55,7 @@ function SignIn(){
                 <br />
                 <input
                         className={styles.textfield}
+                        type="password"
                         name="password"
                         value={password}
                         onChange={handleOnChange}
@@ -40,7 +63,7 @@ function SignIn(){
                         size='40'
                 ></input>
                 <br />
-                <button type="signin" className={styles.submit}>로그인</button>
+                <button type="button" onClick={()=>doSignIn()} className={styles.submit}>로그인</button>
                 <div className={styles.others}>
                     <p>아이디 찾기</p>
                     <p>비밀번호를 잊어버리셨나요?</p>

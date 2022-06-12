@@ -1,5 +1,7 @@
 import styles from './SignIn.module.css';
 import { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function SignUp(){
     const [inputs, setInputs] = useState({
@@ -15,6 +17,25 @@ function SignUp(){
             [name]: value
         });
     };
+
+    const navigate = useNavigate()
+
+    const url = "http://ec2-13-209-75-85.ap-northeast-2.compute.amazonaws.com:3000"
+    const doSignUp = () => {
+        axios.post(url+'/auth/register', {
+            email: inputs.email,
+            password: inputs.password,
+            username: inputs.nickname
+        })
+        .then(function (response) {
+            console.log(response);
+            alert(response.data.result);
+            navigate('/signin');
+        })
+        .catch(function (error) {
+            console.log(error)
+        })
+    }
 
     return(
         <>
@@ -50,7 +71,7 @@ function SignUp(){
                         size='40'
                 ></input>
                 <br />
-                <button type="signup" className={styles.submit}>회원가입</button>
+                <button type="button" className={styles.submit} onClick={() => doSignUp()}>회원가입</button>
             </div>
         </>
     );
