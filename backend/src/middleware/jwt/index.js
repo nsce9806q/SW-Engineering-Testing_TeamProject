@@ -16,8 +16,8 @@ const createRefreshToken = (id, username) => {
 }
 
 const issueToken = (id, username) => {
-    const accessToken = "Bearer" + createAccessToken(id, username);
-    const refreshToken = "Bearer" + createRefreshToken(id, username);
+    const accessToken = "Bearer " + createAccessToken(id, username);
+    const refreshToken = "Bearer " + createRefreshToken(id, username);
 
     DB.User.update({refreshToken: refreshToken}, {where: {id: id}});
     
