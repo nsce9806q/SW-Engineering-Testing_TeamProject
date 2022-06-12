@@ -5,8 +5,17 @@ import yfinance as yf
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from googletrans import Translator
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/company_info")
 async def company_info(stock_id: str):
